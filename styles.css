@@ -1,0 +1,449 @@
+body {
+    
+    background-color: black;
+    font-family: helvetica, arial, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+}
+
+#loading-wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 3s ease-out;
+}
+
+#loading-wrapper.loadingFade {
+  opacity: 0;
+}
+
+#welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 5s ease-out;
+}
+
+#welcome.welcomeFade {
+  opacity: 0;
+}
+
+#logo {
+  position: relative;
+  background-image: url("logo.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 10vh;
+  width: 70vh;
+  margin: 20px;
+}
+
+pre, code{
+  white-space:normal;
+}
+
+#description {
+  position: relative;
+  color: rgb(167, 167, 167);
+  width: 50vw;
+  margin: 40px;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  
+
+}
+
+#enterButton {
+  position: relative;
+  border-radius: 10px;
+  width: 5vw;
+  background-color: transparent;
+  border: 2px solid darkgray;
+  color: white;
+  opacity: 0.5;
+  transition-duration: 0.4s;
+  z-index: 3000;
+  
+}
+
+#enterButton:hover {
+  background-color: rgb(39, 39, 39);
+  opacity: 1;
+}
+
+#loadingText {
+  color: white;
+  display: none;
+}
+
+#loadingText.textFade {
+  opacity: 1;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+h1 {
+  font-style: italic;
+  color: #373fff;
+}
+
+.frontcontainer {
+    position: absolute;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    z-index: 0;
+}
+
+#videocontainer {
+  position: relative;
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.video {
+  max-width: 30vw;
+  height: auto;
+  padding: 20px;
+}
+
+.scene, canvas {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    outline: none;
+    z-index: -1000;
+    margin: 0px;
+    padding: 0px;
+} 
+
+/*#box {
+    position: relative;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+    z-index: 10;
+}*/
+
+#slider {
+    position: absolute;
+    z-index: 10;
+}
+
+#loading-screen {
+	position: absolute;
+	z-index: 50;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #000000;
+	opacity: 1;
+ 	transition: 1s opacity;
+}
+
+#loading-screen.fadeout {
+    opacity: 0;
+}
+
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #9370DB;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #BA55D3;
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+}
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #FF00FF;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+}
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+
+.slider {
+    position: relative;
+    z-index: 100;
+    width: 100vh;
+  }
+  
+  
+  
+  
+  #slideropacity {
+    position: absolute;
+    padding: 0px;
+    left: 76vw;
+    width: 90vh;
+    transform: rotate(270deg);
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  #slidervolume {
+    
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+  }
+  
+  #vidPanner {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    height: 2px;
+    width: 90vh;
+    outline: none;
+    margin: auto;
+    padding: 0px;
+    position: relative;
+    background : -webkit-linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.15) 76.45%, rgba(255, 255, 255, 1) 100%);
+  }
+  
+  #vidPanner::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    background : #FFFFFF;
+    background : rgba(255, 255, 255, 1);
+    border-style : Solid;
+    border-color : #FFFFFF;
+    border-color : rgba(255, 255, 255, 1);
+    border-width : 1px;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  #vidPanner::-webkit-slider-thumb:active{
+    width: 13px;
+    height: 13px;
+  }
+
+  #bgopacity::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    background : #FFFFFF;
+    background : rgba(255, 255, 255, 1);
+    border-style : Solid;
+    border-color : #FFFFFF;
+    border-color : rgba(255, 255, 255, 1);
+    border-width : 1px;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  #bgopacity::-webkit-slider-thumb:active{
+    width: 13px;
+    height: 13px;
+  }
+  
+  #chars {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    opacity: 0.6;
+  }
+  
+  .tag {
+    font-family: 'Quicksand', sans-serif;
+    padding: 0px 10px 0px 10px;
+    font-size: 12px;
+    color: rgb(153, 153, 153);
+  }
+  
+  #tagSlider1 {
+    position:relative;
+    text-align: center;
+    top: -5px;
+  }
+
+  #bgopacity {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    height: 2px;
+    width: 30vh;
+    outline: none;
+    margin: auto;
+    padding: 0px;
+    position: relative;
+    background : -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 1) 100%);
+  }
+  
+  #opacityTag {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    transform: rotate(180deg);
+  }
+  
+  #rangevalue {
+    
+    padding: 0px;
+  }
+
+  ::cue {
+    color: yellow;
+    background-color: transparent;
+    visibility: hidden;
+    
+  }
+
+  #subtitles {
+    position: absolute;
+    display: none;
+    margin: 0px;
+    padding: 0px;
+    width: 100vw;
+    justify-content: space-around;
+    align-items: top;
+    bottom: 27vh;
+
+  }
+
+
+  .tracks{
+    color: lightgoldenrodyellow;
+    position: relative;
+    z-index: 300;
+    font-size: 14px;
+    width: 20vw;
+    text-align: center;
+  }
+
+  #subButton {
+    position: absolute;
+    z-index: 3000;
+    bottom: 30px;
+    right: 15vw;
+    background: transparent;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    padding: 5px;
+    border-color: white;
+    border-radius: 35%;
+    outline: none;
+  }
+
+  #subButton.selected {
+    background: rgb(77, 77, 77);
+  }
+
+  #subButton:hover {
+    background: rgb(77, 77, 77);
+  }
+
+  #subMenu {
+    position: absolute;
+    display: none;
+    z-index: 3000;
+    bottom: 30px;
+    right: 9vw;
+  }
+
+  .langButton {
+    
+    background: transparent;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    padding: 5px;
+    border: none;
+    outline: none;
+  }
+
+  .langButton.selected {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-radius: 25%;
+  }

@@ -1,0 +1,304 @@
+/* CSS files add styling rules to your content */
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 0px;
+}
+
+
+#loading-wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 3s ease-out;
+}
+
+#loading-wrapper.loadingFade {
+  opacity: 0;
+}
+
+#welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 5s ease-out;
+}
+
+#welcome.welcomeFade {
+  opacity: 0;
+}
+
+#logo {
+  position: relative;
+  background-image: url("logo.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 10vh;
+  width: 70vh;
+  margin: 20px;
+}
+
+#description {
+  position: relative;
+  color: rgb(167, 167, 167);
+  text-align: center;
+  width: 70vw;
+  margin: 10px;
+  font-family: 'Quicksand', sans-serif;
+
+}
+
+#enterButton {
+  position: relative;
+  border-radius: 10px;
+  width: 5vw;
+  background-color: transparent;
+  border: 2px solid darkgray;
+  color: white;
+  opacity: 0.5;
+  transition-duration: 0.4s;
+  z-index: 3000;
+  
+}
+
+#enterButton:hover {
+  background-color: rgb(39, 39, 39);
+  opacity: 1;
+}
+
+#loadingText {
+  color: white;
+  display: none;
+}
+
+#loadingText.textFade {
+  opacity: 1;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+h1 {
+  font-style: italic;
+  color: #373fff;
+}
+
+.background-color {
+  width: 500px;
+  height: 500px;
+  background: red;
+  opacity: 0.5;
+}
+
+.frontcontainer {
+  position: absolute;
+  display: none;
+  margin: 0px;
+  padding: 0px;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  z-index: 0;
+}
+
+#videocontainer {
+  position: relative;
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.video {
+  max-width: 30vw;
+  height: auto;
+  padding: 20px;
+}
+
+.slider {
+  position: relative;
+  z-index: 2;
+  width: 100vh;
+}
+
+
+
+
+#slideropacity {
+  position: absolute;
+  padding: 0px;
+  left: 76vw;
+  width: 90vh;
+  transform: rotate(270deg);
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+}
+
+#slidervolume {
+  
+  position: absolute;
+  top: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+#vidPanner {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  height: 2px;
+  width: 90vh;
+  outline: none;
+  margin: auto;
+  padding: 0px;
+  position: relative;
+  background : -webkit-linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.15) 76.45%, rgba(255, 255, 255, 1) 100%);
+}
+
+#vidPanner::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  background : #FFFFFF;
+  background : rgba(255, 255, 255, 1);
+  border-style : Solid;
+  border-color : #FFFFFF;
+  border-color : rgba(255, 255, 255, 1);
+  border-width : 1px;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  padding: 0px;
+  margin: 0px;
+}
+
+#bgopacity::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  background : #FFFFFF;
+  background : rgba(255, 255, 255, 1);
+  border-style : Solid;
+  border-color : #FFFFFF;
+  border-color : rgba(255, 255, 255, 1);
+  border-width : 1px;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  padding: 0px;
+  margin: 0px;
+}
+
+#chars {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  opacity: 0.6;
+}
+
+.tag {
+  font-family: 'Quicksand', sans-serif;
+  padding: 0px 10px 0px 10px;
+  font-size: 12px;
+  color: rgb(153, 153, 153);
+}
+
+#tagSlider1 {
+  position:relative;
+  text-align: center;
+  top: -5px;
+}
+
+#bgopacity {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  height: 2px;
+  width: 30vh;
+  outline: none;
+  margin: auto;
+  padding: 0px;
+  position: relative;
+  background : -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+#opacityTag {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  transform: rotate(180deg);
+}
+
+#rangevalue {
+  
+  padding: 0px;
+}
+
+
+#aframe {
+  position: relative;
+  z-index: -10;
+}
+
+.rules {
+
+  position: absolute;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 12px;
+  color: rgb(153, 153, 153);
+  z-index: 10;
+
+}
+
+#ruleOpacity1 {
+
+  top: 5vh;
+  right: 7vw;
+  display: none;
+
+}
+
+#ruleOpacity2 {
+
+  bottom: 10vh;
+  right: 7vw;
+  display: none;
+
+}
+
+#ruleVolume {
+
+  bottom: 10vh;
+  display: none;
+
+}
+
+#ruleScene {
+
+  bottom: 10vh;
+  right: 7vw;
+  display: none;
+
+}

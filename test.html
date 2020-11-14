@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" style="background-color: red; width: 100px; height: 100px; margin: 100px; visibility: hidden;"></div>
+    <button id="one">One</button>
+    <button id="two">Two</button>
+
+
+    <!--<script>
+
+        let one = document.querySelector("#one");
+        let two = document.querySelector("#two");
+        let box = document.querySelector("#box");
+
+        var oneLoad;
+        var twoLoad;
+
+        one.addEventListener('click', ()=>{
+            oneLoad = true;
+            toggleBox();
+        });
+
+        two.addEventListener('click', ()=>{
+            twoLoad = true;
+            toggleBox();
+        });
+
+        function toggleBox(){
+
+            if(oneLoad && twoLoad){
+                box.style.visibility = "visible";
+            }else{console.log("You didn't click both yet")}
+        }
+
+
+    </script>-->
+
+    <script>
+
+        let one = document.querySelector("#one");
+        let two = document.querySelector("#two");
+        let box = document.querySelector("#box");
+
+        let p1 = one.onclick = new Promise((resolve, reject) => {myConsole("You clicked")}).then(myConsole("first"));
+        let p2 = two.onclick = myConsole("You clicked").then(myConsole("second"));
+
+
+        function myConsole(txt){
+            console.log(txt);
+        }
+
+        Promise.all([p1, p2]).then(() => {
+            console.log("You promised!")
+            box.style.visibility = "visible";
+        })
+
+
+    </script>
+
+</body>
+</html>
