@@ -367,7 +367,7 @@ h1 {
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;
     height: 2px;
-    width: 30vh;
+    width: 43vh;
     outline: none;
     margin: auto;
     padding: 0px;
@@ -465,3 +465,56 @@ h1 {
     color: black;
     border-radius: 25%;
   }
+
+.rules {
+  position: absolute;
+  color: white;
+  z-index: 1000;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  padding: 5px;
+  opacity: 0.7;
+  animation-duration: 2s;
+  animation-name: changeopacity;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  
+}
+
+@keyframes changeopacity {
+  from {
+    opacity: 0.7;
+  }
+
+  to {
+    opacity: 0.3;
+  }
+
+}
+
+#rule1 {
+  bottom: 10vh;
+}
+
+#rule2 {
+  right: 3vw;
+  top: 25vh;
+  display: none;
+}
+
+#rule3 {
+  bottom: 16vh;
+  right: 3vw;
+  text-align: right;
+  display: none;
+}
+
+pre, p, button, input {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}

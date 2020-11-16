@@ -133,11 +133,18 @@
             
           </form>
         
-        <button id="subButton">CC</button>
+        <button id="subButton">Subt</button>
         <div id="subMenu">
             <button id="esp" class="langButton">ESP</button>
             <button id="eng" class="langButton">ENG</button>
         </div>
+
+        <!--RULES-->
+        <p class="rules" id="rule1">You can choose the character by moving the slider. Try it!</p>
+        <p class="rules" id="rule2">There's a scene in the background, move this slider to the minimum.</p>
+        <pre class="rules" id="rule3">You can use your mouse now to navigate the scene!<br>Left-click: Rotate<br>Right-click: Drag<br>Wheel: Zoom</pre>
+
+
         <!--Scene Container-->
         <div class="scene"></div>
     
@@ -762,6 +769,41 @@
 
     </script>
 
+    <!--RULES-->
+    <script>
+    
+        let rule1 = document.getElementById('rule1');
+        let rule2 = document.getElementById('rule2');
+        let rule3 = document.getElementById('rule3');
+
+        document.querySelector('#vidPanner').addEventListener('input', firstRule);
+
+        function firstRule(){
+            rule1.style.display = "none";
+            rule1.remove();
+            rule2.style.display = "block";
+            document.querySelector('#vidPanner').removeEventListener('input', firstRule);
+            document.querySelector('#bgopacity').addEventListener('zeroOpacity', secondRule);
+        };
+
+        function secondRule(){
+            rule2.style.display = "none";
+            rule2.remove();
+            rule3.style.display = "block";
+            document.querySelector('#bgopacity').removeEventListener('zeroOpacity', secondRule);
+            document.querySelector('#bgopacity').addEventListener('input', thirdRule);
+        };
+
+        function thirdRule(){
+            rule3.style.display = "none";
+            rule3.remove();
+            document.querySelector('#bgopacity').removeEventListener('input', thirdRule);
+        };
+
+        
+
+    </script>
+
 
     <!--LANGUAGES-->
     <script>
@@ -802,6 +844,11 @@
                 tag3.innerHTML = "Char. 3";
                 tagSlider1.innerHTML = "Character Panner";
                 tagSlider2.innerHTML = "Opacity Video";
+
+                rule1.innerHTML = "You can choose the character by moving the slider. Try it!";
+                rule2.innerHTML = "There's a scene in the background, move this slider to the minimum.";
+                rule3.innerHTML = "You can use your mouse now to navigate the scene!\nLeft-click: Rotate\nRight-click: Drag\nWheel: Zoom";
+
                 langOp = "en";
 
                 espButtonMenu.classList.toggle('selected');
@@ -821,6 +868,11 @@
                 tag3.innerHTML = "Pers. 3";
                 tagSlider1.innerHTML = "Transición Personajes";
                 tagSlider2.innerHTML = "Opacidad Video";
+
+                rule1.innerHTML = "Puedes elegir el personaje moviendo el slider inferior. ¡Inténtalo!";
+                rule2.innerHTML = "Hay una escena en el fondo, mueve el slider lateral al mínimo.";
+                rule3.innerHTML = "¡Ahora puedes usar tu ratón para navegar la escena!\nClick izquierdo: Rotar\nClick derecho: Arrastrar\nRueda: Zoom";
+
                 langOp = "es";
 
                 espButtonMenu.classList.toggle('selected');
@@ -840,6 +892,11 @@
                 tag3.innerHTML = "Pers. 3";
                 tagSlider1.innerHTML = "Transición Personajes";
                 tagSlider2.innerHTML = "Opacidad Video";
+
+                rule1.innerHTML = "Puedes elegir el personaje moviendo el slider inferior. ¡Inténtalo!";
+                rule2.innerHTML = "Hay una escena en el fondo, mueve el slider lateral al mínimo.";
+                rule3.innerHTML = "¡Ahora puedes usar tu ratón para navegar la escena!\nClick izquierdo: Rotar\nClick derecho: Arrastrar\nRueda: Zoom";
+
                 langOp = "es";
 
                 espButtonMenu.classList.toggle('selected');
@@ -850,6 +907,9 @@
 
 
     </script>
+
+
+
 
     <!--<script>
         let slider = document.querySelector('#slider');
