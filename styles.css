@@ -65,11 +65,19 @@ pre, code{
 #description {
   position: relative;
   color: rgb(167, 167, 167);
-  width: 50vw;
+  width: 60vw;
   margin: 40px;
   font-family: 'Quicksand', sans-serif;
   text-align: center;
   
+
+}
+
+#langOp-wrapper {
+  position: absolute;
+  right: 6vw;
+  display: flex;
+  flex-direction: column;
 
 }
 
